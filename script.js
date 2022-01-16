@@ -20,11 +20,11 @@ document.getElementById('botao').addEventListener('click', function(){
 
 traduzirCondicao = (data) => {
     if(data.status == 'Alive'){
-        return 'Sim! :D';
+        return 'Está vivo!';
     }else if(data.status == 'Dead'){
-        return 'Não. Está morto! :*(';
+        return 'Está morto!';
     }else{
-        return 'Infelizmente não sabemos.';
+        return 'Não se sabe.';
     }
 }
 
