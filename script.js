@@ -10,21 +10,21 @@ const imagem3 = document.querySelector('#img3');
 const nomeDoPersonagem3 = document.querySelector('#nome3');
 const especie3 = document.querySelector('#especie3');
 const condicao3 = document.querySelector('#condicao3');
-const botao = document.querySelector('#bilbo');
+const botao = document.querySelector('#botao');
 
-document.getElementById('bilbo').addEventListener('click', function(){
-    pegarPersonagem();
+document.getElementById('botao').addEventListener('click', function(){
+    pegarPersonagem1();
     pegarPersonagem2();
     pegarPersonagem3();
 })
 
 traduzirCondicao = (data) => {
-    if(data.status == 'unknown'){
-        return 'Não sabemos';
-    }else if(data.status == 'Alive'){
-        return 'Sim';
-    }else {
-        return 'Não. Está morto';
+    if(data.status == 'Alive'){
+        return 'Sim! :D';
+    }else if(data.status == 'Dead'){
+        return 'Não. Está morto! :*(';
+    }else{
+        return 'Infelizmente não sabemos.';
     }
 }
 
@@ -32,7 +32,7 @@ gerarValorAletorio = () => {
     return Math.floor(Math.random() * 826);
 }
 
-pegarPersonagem = () => {
+pegarPersonagem1 = () => {
     let numeroAleatorio = gerarValorAletorio();
     return fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio}`, {
         method:'GET',
@@ -82,5 +82,3 @@ pegarPersonagem3 = () => {
         condicao3.innerHTML = traduzirCondicao(data);
     });
 }
-
-botao.onclick = pegarPersonagem;
