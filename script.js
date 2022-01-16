@@ -16,7 +16,13 @@ document.getElementById('botao').addEventListener('click', function(){
     pegarPersonagem1();
     pegarPersonagem2();
     pegarPersonagem3();
+    topFunction();
 })
+
+function topFunction() {
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; 
+  }
 
 traduzirCondicao = (data) => {
     if(data.status == 'Alive'){
